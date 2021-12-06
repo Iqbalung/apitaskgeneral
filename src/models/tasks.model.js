@@ -1,21 +1,21 @@
-// users-model.js - A mongoose model
+// tasks-model.js - A mongoose model
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 module.exports = function (app) {
-  const modelName = 'users';
+  const modelName = 'tasks';
   const mongooseClient = app.get('mongooseClient');
-  const schema = new mongooseClient.Schema({
+  const { Schema } = mongooseClient;
 
-    email: { type: String, unique: true, lowercase: true,required:true},
-    password: { type: String},
-    name: { type: String,required:true },
-    username: { type: String, unique: true, required:true },
-    avatar: { type: String },
-    role: { type: String },
-    mistake: { type: String },
-
-
+  const schema = new Schema({
+    taskTittle: { type: String, required: true },
+    taskRefNumber: { type: String, required: true },
+    taskAssigne: { type: String, required: true },
+    taskStatus: { type: String, required: true },
+    taskExpiredTime: { type: Date, required: true },
+    taskSlaTime: { type: Date, required: true },
+    taskHistory: { type: Object },
+    taskCreatedBy:{ type:String , required:true }
   }, {
     timestamps: true
   });

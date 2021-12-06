@@ -1,4 +1,5 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
+const validateRole = require('../../hooks/validation-create-role.hook');
 
 const {
   hashPassword, protect
@@ -6,17 +7,17 @@ const {
 
 module.exports = {
   before: {
-    all: [],
-    find: [ authenticate('jwt') ],
-    get: [ authenticate('jwt') ],
+    all: [authenticate('jwt')],
+    find: [ ],
+    get: [ ],
     create: [ hashPassword('password') ],
-    update: [ hashPassword('password'),  authenticate('jwt') ],
-    patch: [ hashPassword('password'),  authenticate('jwt') ],
-    remove: [ authenticate('jwt') ]
+    update: [ hashPassword('password') ],
+    patch: [ hashPassword('password') ],
+    remove: [ ]
   },
 
   after: {
-    all: [ 
+    all: [
       // Make sure the password field is never sent to the client
       // Always must be the last hook
       protect('password')

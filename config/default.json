@@ -28,5 +28,5 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://localhost:27017/feathers"
+  "mongodb": "mongodb+srv://ulza:ulza@cluster0.s5reg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }
