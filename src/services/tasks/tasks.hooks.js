@@ -3,11 +3,11 @@ const validate = require('../../hooks/validation.hooks');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt'), validate() ],
-    find: [],
-    get: [],
+    all: [ authenticate('jwt') ],
+    find: [validate()],
+    get: [validate()],
     create: [],
-    update: [],
+    update: [validate()],
     patch: [],
     remove: []
   },

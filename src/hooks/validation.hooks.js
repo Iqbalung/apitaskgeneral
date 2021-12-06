@@ -6,7 +6,7 @@ const roles = [
   },
   {
     'type': 'worker',
-    'permissions': ['tasks:get','tasks:update']}
+    'permissions': ['tasks:get','tasks:update','tasks:find']}
 ];
 module.exports = function () {
   return function (hook){
