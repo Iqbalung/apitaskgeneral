@@ -8,14 +8,14 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
 
   const schema = new Schema({
-    taskTittle: { type: String, required: true },
-    taskRefNumber: { type: String, required: true },
-    taskAssigne: { type: String, required: true },
-    taskStatus: { type: String, required: true },
-    taskExpiredTime: { type: Date, required: true },
-    taskSlaTime: { type: Date, required: true },
+    taskTittle: { type: String },
+    taskRefNumber: { type: String },
+    taskAssigne: { type: String },
+    taskStatus: { type: String },
+    taskExpiredTime: { type: Date },
+    taskSlaTime: { type: Date },
     taskHistory: { type: Object },
-    taskCreatedBy:{ type:String , required:true }
+    taskCreatedBy:{ type:String }
   }, {
     timestamps: true
   });

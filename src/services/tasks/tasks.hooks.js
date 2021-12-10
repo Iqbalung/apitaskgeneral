@@ -1,5 +1,7 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const validate = require('../../hooks/validation.hooks');
+const populateTask = require('../../hooks/populate-task');
+const sendevent = require('../../hooks/send-event')
 
 module.exports = {
   before: {
@@ -16,7 +18,7 @@ module.exports = {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [sendevent()],
     update: [],
     patch: [],
     remove: []

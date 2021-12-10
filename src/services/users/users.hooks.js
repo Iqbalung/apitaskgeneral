@@ -1,5 +1,7 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const validateRole = require('../../hooks/validation-create-role.hook');
+const populateUser = require('../../hooks/populate-user');
+
 
 const {
   hashPassword, protect
