@@ -13,7 +13,7 @@ module.exports = function (app) {
     taskAssigne: { type: String, required: true },
     taskStatus: { type: String, required: true },
     taskExpiredTime: { type: Date, required: true },
-    taskSlaTime: { type: Date, required: true },
+    taskSlaTime: { type: Number, required: true },
     taskHistory: { type: Object },
     taskCreatedBy:{ type:String , required:true }
   }, {
