@@ -6,7 +6,7 @@ const hooks = require('./tasks.hooks');
 module.exports = function (app) {
   const options = {
     Model: createModel(app),
-    events: ['create'],
+    events: ['create','update','patch'],
     // paginate: app.get('paginate')
   };
 
@@ -22,8 +22,11 @@ module.exports = function (app) {
 
   // Listen `created` with a handler reference
   service.on('created', onCreatedListener);
-
-  service.emit('created', onCreatedListener)
+  service.emit('created', onCreatedListener);
+  service.on('updated', onCreatedListener);
+  service.emit('updated', onCreatedListener);
+  service.on('patched', onCreatedListener);
+  service.emit('patched', onCreatedListener);
 
   service.on('connection', function (socket) {
 
@@ -34,6 +37,18 @@ module.exports = function (app) {
         io.emit('created', service);
         socket.emit('created', service);
         })
+        socket.on('updated', function(service){
+            console.log(service);
+
+        io.emit('updated', service);
+        socket.emit('updated', service);
+        })
+        socket.on('patched', function(service){
+            console.log(service);
+
+        io.emit('patched', service);
+        socket.emit('patched', service);
+        })
 
         console.log('connected');
     })
@@ -42,6 +57,12 @@ module.exports = function (app) {
       after: {
         create(context) {
           service.emit('created', onCreatedListener);
+        },
+        create(context) {
+          service.emit('updated', onCreatedListener);
+        },
+        create(context) {
+          service.emit('patched', onCreatedListener);
         }
       }
     });
