@@ -2,10 +2,11 @@ const { authenticate } = require('@feathersjs/authentication').hooks;
 const validate = require('../../hooks/validation.hooks');
 const populateTask = require('../../hooks/populate-task');
 const sendevent = require('../../hooks/send-event')
+const search = require('feathers-mongodb-fuzzy-search');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [ authenticate('jwt'),search({fields:'taskTittle'}) ],
     find: [validate()],
     get: [validate()],
     create: [],

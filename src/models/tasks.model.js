@@ -9,12 +9,13 @@ module.exports = function (app) {
 
   const schema = new Schema({
     taskTittle: { type: String, required: true },
-    taskRefNumber: { type: String, required: true },
+    taskRefNumber: { type: String, required: true, unique:true },
     taskAssigne: { type: String, required: true },
     taskStatus: { type: String, required: true },
     taskExpiredTime: { type: Date },
+    taskTimeProcess: {type: Date},
     taskSlaTime: { type: Number},
-    taskHistory: { type: Object },
+    taskHistory: { type: Array },
     taskData: { type: Object },
     taskCreatedBy:{ type:String , required:true }
   }, {

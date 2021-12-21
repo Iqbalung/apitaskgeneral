@@ -19,6 +19,7 @@ const channels = require('./channels');
 const authentication = require('./authentication');
 
 const mongoose = require('./mongoose');
+// const search = require('feathers-mongodb-fuzzy-search');
 
 const app = express(feathers());
 
@@ -39,6 +40,7 @@ app.use('/', express.static(app.get('public')));
 // Set up Plugins and providers
 app.configure(express.rest());
 app.configure(socketio());
+// app.configure(search());
 
 app.configure(mongoose);
 
