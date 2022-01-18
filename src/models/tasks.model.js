@@ -17,6 +17,7 @@ module.exports = function (app) {
     taskSlaTime: { type: Number},
     taskHistory: { type: Array },
     taskData: { type: Object },
+    accountFrom: {type: Object },
     taskCreatedBy:{ type:String , required:true }
   }, {
     timestamps: true
