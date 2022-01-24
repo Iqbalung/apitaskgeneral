@@ -5,7 +5,7 @@ const sendevent = require('../../hooks/send-event')
 const search = require('feathers-mongodb-fuzzy-search');
 const momentTz = require('moment-timezone')
 
-const changeTimezone = date => date ? momentTz().tz('Asia/Jakarta').format() : null
+const changeTimezone = date => date ? momentTz(date).tz('Asia/Jakarta').format() : null
 
 module.exports = {
   before: {
