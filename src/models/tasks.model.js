@@ -19,8 +19,6 @@ module.exports = function (app) {
     taskData: { type: Object },
     accountFrom: {type: Object },
     taskCreatedBy:{ type:String , required:true }
-  }, {
-    timestamps: true
   });
 
   schema.path('taskTittle').index({text:true});

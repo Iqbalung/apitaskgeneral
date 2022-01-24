@@ -52,6 +52,7 @@
     "feathers-mongoose": "^8.5.1",
     "feathers-permissions": "^2.1.4",
     "helmet": "^4.6.0",
+    "moment-timezone": "^0.5.34",
     "mongodb-core": "^3.2.7",
     "mongoose": "^6.0.13",
     "serve-favicon": "^2.5.0",
