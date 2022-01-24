@@ -18,8 +18,6 @@ module.exports = function (app) {
     taskHistory: { type: Array },
     taskData: { type: Object },
     taskCreatedBy:{ type:String , required:true }
-  }, {
-    timestamps: true
   });
 
   schema.path('taskTittle').index({text:true});
