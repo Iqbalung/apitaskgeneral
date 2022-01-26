@@ -14,7 +14,8 @@ module.exports = function (app) {
     avatar: { type: String },
     role: { type: String },
     mistake: { type: String },
-    login_status: { type: Boolean, default: false }
+    login_status: { type: Boolean, default: false },
+    ip: [ { type: String } ]
 
 
   }, {
