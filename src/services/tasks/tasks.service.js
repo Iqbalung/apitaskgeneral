@@ -7,7 +7,7 @@ module.exports = function (app) {
   const options = {
     Model: createModel(app),
     events: ['create','update','patch'],
-    whitelist: ['$text','$search'],
+    whitelist: ['$text','$search', '$regex'],
     paginate: app.get('paginate')
   };
 
