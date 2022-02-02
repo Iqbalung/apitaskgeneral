@@ -14,6 +14,7 @@ module.exports = function (app) {
     taskStatus: { type: String, required: true },
     taskExpiredTime: { type: Date },
     taskTimeProcess: {type: Date},
+    createdAt: {type: Date},
     taskSlaTime: { type: Number},
     taskHistory: { type: Array },
     userId: { type: String },
