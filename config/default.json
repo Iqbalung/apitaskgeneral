@@ -26,7 +26,8 @@
     "local": {
       "usernameField": "email",
       "passwordField": "password"
-    }
+    },
+    "timezone": "+07:00"
   },
   "mongodb": "mongodb+srv://apiidlive:apiidlive@apilive.blyrr.mongodb.net/apiidlive?retryWrites=true&w=majority"
 }
