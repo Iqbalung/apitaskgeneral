@@ -24,8 +24,8 @@ module.exports = {
     create: [ context => {
       context.data.createdAt = momentTz().tz('Asia/Jakarta').format()
       context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
-
-      return context
+      console.log(context);
+      return true
      } ],
     update: [validate(), context => {
       context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
