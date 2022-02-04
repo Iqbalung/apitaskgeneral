@@ -17,7 +17,7 @@ module.exports = {
         context.data.taskTimeProcess = momentTz().tz('Asia/Jakarta').format()
       }
 
-      return context
+      return true
     } ],
     find: [validate()],
     get: [validate()],
