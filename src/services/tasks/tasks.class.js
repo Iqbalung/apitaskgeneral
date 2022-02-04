@@ -1,5 +1,5 @@
 const { Service } = require('feathers-mongoose');
-
+const momentTz = require('moment-timezone')
 exports.Tasks = class Tasks extends Service {
     async find(params) {
         if (params.query.createdAt) {
@@ -34,5 +34,13 @@ exports.Tasks = class Tasks extends Service {
         }
 
         return super.find(params)
+    }
+
+    async create(params) {
+        
+        params.createdAt = momentTz().add(7, 'hours').format()
+      params.updatedAt = momentTz().add(7, 'hours').format()
+        console.log("why",params);
+        return super.create(params)
     }
 };
