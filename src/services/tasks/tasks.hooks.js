@@ -17,11 +17,7 @@ module.exports = {
         context.data.taskTimeProcess = momentTz().tz('Asia/Jakarta').format()
       }
 
-      // return context
-
-      console.log(context.data)
-
-      return false
+      return context
     } ],
     find: [validate()],
     get: [validate()],
@@ -29,11 +25,7 @@ module.exports = {
       context.data.createdAt = momentTz().tz('Asia/Jakarta').format()
       context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
 
-      // return context
-
-      console.log(context.data)
-
-      return false
+      return context
      } ],
     update: [validate(), context => {
       context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
