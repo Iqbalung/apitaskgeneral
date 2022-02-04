@@ -13,8 +13,8 @@ module.exports = {
       const method = context.method
 
       if (['create', 'update', 'patch'].includes(method)) {
-        context.data.taskExpiredTime = changeTimezone(context.data.taskExpiredTime)
-        context.data.taskTimeProcess = changeTimezone(context.data.taskTimeProcess)
+        context.data.taskExpiredTime = momentTz().tz('Asia/Jakarta').format()
+        context.data.taskTimeProcess = momentTz().tz('Asia/Jakarta').format()
       }
 
       return context
@@ -22,18 +22,18 @@ module.exports = {
     find: [validate()],
     get: [validate()],
     create: [ context => {
-      context.data.createdAt = changeTimezone(new Date)
-      context.data.updatedAt = changeTimezone(new Date)
+      context.data.createdAt = momentTz().tz('Asia/Jakarta').format()
+      context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
 
       return context
      } ],
     update: [validate(), context => {
-      context.data.updatedAt = changeTimezone(new Date)
+      context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
 
       return context
     } ],
     patch: [context => {
-      context.data.updatedAt = changeTimezone(new Date)
+      context.data.updatedAt = momentTz().tz('Asia/Jakarta').format()
 
       return context
     } ],
