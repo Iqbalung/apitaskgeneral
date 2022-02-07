@@ -10,7 +10,7 @@ module.exports = function (app) {
   const schema = new Schema({
     taskTittle: { type: String, required: true },
     taskRefNumber: { type: String, required: true, unique:true },
-    taskAssigne: { type: String, required: true },
+    taskAssigne: { type: String },
     taskStatus: { type: String, required: true },
     taskExpiredTime: { type: Date },
     taskTimeProcess: {type: Date},
