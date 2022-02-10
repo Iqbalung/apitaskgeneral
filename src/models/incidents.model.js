@@ -11,6 +11,7 @@ module.exports = function (app) {
     refNumber: { type: String},
     dateCrawl: { type: Date},
     status: { type: String },
+    detailData:{ type: Object },
   }, {
     timestamps: true
   });
