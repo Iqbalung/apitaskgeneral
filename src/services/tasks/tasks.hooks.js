@@ -48,8 +48,10 @@ module.exports = {
     create: [sendevent()],
     update: [],
     patch: [async context => {
-      try {        
-        await axios.post('http://localhost:8000/reject', { id: context.id })
+      try {
+        const rejectUrl = context.app.get('apiidlive')
+        
+        await axios.post(rejectUrl, { id: context.id })
 
         return context
       } catch (err) {
