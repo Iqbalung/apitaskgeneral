@@ -21,6 +21,12 @@ exports.Tasks = class Tasks extends Service {
             delete params.query['taskData.account_number']
         }
     
+        if (params.query['taskData.anRekening']) {
+            params.query['taskData.anRekening'] = { $regex: new RegExp(params.query['taskData.anRekening'], 'i') }
+        } else {
+            delete params.query['taskData.anRekening']
+        }
+    
         if (params.query['taskData.bank_type']) {
             params.query['taskData.bank_type'] = { $regex: new RegExp(params.query['taskData.bank_type'], 'i') }
         } else {

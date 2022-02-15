@@ -4,6 +4,7 @@ const populateTask = require('../../hooks/populate-task');
 const sendevent = require('../../hooks/send-event')
 const search = require('feathers-mongodb-fuzzy-search');
 const momentTz = require('moment-timezone')
+const axios = require('axios')
 
 const changeTimezone = momentTz().format()
 
@@ -46,7 +47,17 @@ module.exports = {
     get: [],
     create: [sendevent()],
     update: [],
-    patch: [],
+    patch: [async context => {
+      try {
+        const rejectUrl = context.app.get('apiidlive')
+        
+        await axios.post(rejectUrl, { id: context.id })
+
+        return context
+      } catch (err) {
+        console.log(err)
+      }
+    }],
     remove: []
   },
 
