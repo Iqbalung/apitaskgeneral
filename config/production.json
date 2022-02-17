@@ -29,5 +29,5 @@
     }
   },
   "mongodb": "mongodb+srv://apiidlive:apiidlive@apilive.blyrr.mongodb.net/apiidlive?retryWrites=true&w=majority",
-  "apiidlive": "http://apiidlive-vsqyr.ondigitalocean.app"
+  "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app"
 }
