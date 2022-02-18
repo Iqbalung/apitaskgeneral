@@ -9,8 +9,15 @@ module.exports = function (app) {
 
   const schema = new Schema({
     mutationId: { type: String},
-    rekening: { type: String},
+    account_receiver: { type: String},
+    account_sender: { type: String},
     amount: { type: Number },
+    date: {type: String},
+    date_crawl: {type: Date},
+    ib: {type: Object},
+    index: {type: Number},
+    payload: {type: Object},
+    status: {type: String},
   }, {
     timestamps: true
   });
