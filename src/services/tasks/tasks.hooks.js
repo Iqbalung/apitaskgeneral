@@ -49,13 +49,15 @@ module.exports = {
     update: [],
     patch: [async context => {
       try {
-        const rejectUrl = context.app.get('apiidlive')
+        const rejectUrl = context.app.get('apiidlive_reject')
+        if(context.data.hasOwnProperty('taskStatus') && context.data.taskStatus=='reject'){
+          console.log("whyw",context)
+          await axios.put("http://51.79.147.143:3000/reject?id="+context.result.taskRefNumber, { id: context.data._id,taskStatus:context.data.taskStatus })
+          return context
         
-        await axios.post(rejectUrl, { id: context.id })
-
-        return context
+        }
       } catch (err) {
-        console.log(err)
+        console.log("why",err)
       }
     }],
     remove: []
