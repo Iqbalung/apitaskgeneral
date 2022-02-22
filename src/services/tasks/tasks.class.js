@@ -10,7 +10,8 @@ exports.Tasks = class Tasks extends Service {
         }
     
         if (params.query.userId) {
-            params.query.userId = { $regex: new RegExp(params.query.userId, 'i') }
+            params.query['taskData.userId'] = { $regex: new RegExp(params.query.userId, 'i') }
+            delete params.query.userId
         } else {
             delete params.query.userId
         }
