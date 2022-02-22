@@ -10,7 +10,8 @@ exports.Tasks = class Tasks extends Service {
         }
 
         if (params.query.userId) {
-            params.query.userId = { $regex: new RegExp(params.query.userId, 'i') }
+            params.query['taskData.userId'] = { $regex: new RegExp(params.query.userId, 'i') }
+            delete params.query.userId
         } else {
             delete params.query.userId
         }
@@ -40,10 +41,10 @@ exports.Tasks = class Tasks extends Service {
         }
 
         if (params.query['taskAssigne']) {
-          params.query['taskAssigne'] = parseInt(params.query['taskAssigne'])
-      } else {
+          params.query['taskAssigne'] = { $regex: new RegExp(params.query['taskAssigne'], 'i') }
+        } else {
           delete params.query['taskAssigne']
-      }
+        }
 
         return super.find(params)
     }
