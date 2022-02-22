@@ -58,10 +58,10 @@ module.exports = function (app) {
       create(context) {
         service.emit('created', onCreatedListener);
       },
-      create(context) {
+      update(context) {
         service.emit('updated', onCreatedListener);
       },
-      create(context) {
+      patch(context) {
         service.emit('patched', onCreatedListener);
       }
     }
