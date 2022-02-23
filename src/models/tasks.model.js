@@ -20,6 +20,7 @@ module.exports = function (app) {
     userId: { type: String },
     taskData: { type: Object },
     accountFrom: {type: Object },
+    updatedAt: {type: Date},
     taskCreatedBy:{ type:String , required:true }
   });
 
