@@ -5,6 +5,7 @@ const tasks = require('./tasks/tasks.service.js');
 const bank = require('./bank/bank.service.js');
 const debt = require('./debt/debt.service.js');
 const incidents = require('./incidents/incidents.service.js');
+const logactivity = require('./logactivity/logactivity.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -14,4 +15,5 @@ module.exports = function (app) {
   app.configure(bank);
   app.configure(debt);
   app.configure(incidents);
+  app.configure(logactivity);
 };
