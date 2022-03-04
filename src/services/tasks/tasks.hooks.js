@@ -52,7 +52,7 @@ module.exports = {
         const rejectUrl = context.app.get('apiidlive_reject')
         if(context.data.hasOwnProperty('taskStatus') && context.data.taskStatus=='reject'){
           console.log("whyw",context)
-          await axios.put("http://128.199.233.113:3000/reject?id="+context.result.taskRefNumber, { id: context.data._id,taskStatus:context.data.taskStatus })
+          await axios.put("http://194.233.64.209:3000/reject?id="+context.result.taskRefNumber, { id: context.data._id,taskStatus:context.data.taskStatus })
           return context
 
         }
