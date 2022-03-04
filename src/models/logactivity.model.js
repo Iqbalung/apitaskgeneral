@@ -9,7 +9,8 @@ module.exports = function (app) {
 
   const schema = new Schema({
     process_name: { type: String},
-    message: { type: String}
+    message: { type: String},
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   }, {
     timestamps: true
   });

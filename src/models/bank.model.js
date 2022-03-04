@@ -9,7 +9,8 @@ module.exports = function (app) {
 
   const schema = new Schema({
     username: { type: String, required: true,unique:true },
-    password: { type: String, required:true }
+    password: { type: String, required:true },
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   }, {
     timestamps: true
   });

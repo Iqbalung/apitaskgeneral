@@ -12,6 +12,7 @@ module.exports = function (app) {
     dateCrawl: { type: Date},
     status: { type: String },
     detailData:{ type: Object },
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   }, {
     timestamps: true
   });

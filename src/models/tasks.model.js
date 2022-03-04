@@ -21,7 +21,8 @@ module.exports = function (app) {
     taskData: { type: Object },
     accountFrom: {type: Object },
     updatedAt: {type: Date},
-    taskCreatedBy:{ type:String , required:true }
+    taskCreatedBy:{ type:String , required:true },
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   });
 
   schema.path('taskTittle').index({text:true});

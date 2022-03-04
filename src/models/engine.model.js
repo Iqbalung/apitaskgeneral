@@ -15,6 +15,7 @@ module.exports = function (app) {
     taskSlaTime: { type: Date, required: true },
     accountFrom: {type: Object },
     taskHistory: { type: Array },
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   }, {
     timestamps: true
   });
