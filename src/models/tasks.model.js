@@ -23,6 +23,7 @@ module.exports = function (app) {
     updatedAt: {type: Date},
     taskCreatedBy:{ type:String , required:true },
     isCopied: { type: Object }
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   });
 
   schema.path('taskTittle').index({text:true});

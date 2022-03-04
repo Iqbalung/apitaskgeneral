@@ -18,6 +18,7 @@ module.exports = function (app) {
     index: {type: Number},
     payload: {type: Object},
     status: {type: String},
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   }, {
     timestamps: true
   });

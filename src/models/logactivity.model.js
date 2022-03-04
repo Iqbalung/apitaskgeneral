@@ -11,6 +11,8 @@ module.exports = function (app) {
     process_name: { type: String},
     account: { type: String },
     message: { type: String}
+    message: { type: String},
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   }, {
     timestamps: true
   });
