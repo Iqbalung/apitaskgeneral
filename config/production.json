@@ -1,6 +1,8 @@
 {
   "host": "localhost",
   "port": 3030,
+  "url": "https://api-tasks-u4boz.ondigitalocean.app",
+  "client_url": "http://admin-react-235xa.ondigitalocean.app//#",
   "public": "../public/",
   "paginate": {
     "default": 10,
@@ -29,5 +31,11 @@
     }
   },
   "mongodb": "mongodb+srv://apiidlive:apiidlive@apilive.blyrr.mongodb.net/apiidlive?retryWrites=true&w=majority",
-  "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app"
+  "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app",
+  "smtp": {
+    "host": "smtp.mailtrap.io",
+    "port": "2525",
+    "user": "d09a9900455026",
+    "pass": "9df1456171d2b4"
+  }
 }
