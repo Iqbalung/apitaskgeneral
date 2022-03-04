@@ -1,6 +1,8 @@
 {
   "host": "localhost",
   "port": 3031,
+  "url": "http://localhost:3031",
+  "client_url": "http://localhost:8080/#",
   "public": "../public/",
   "paginate": {
     "default": 100,
@@ -30,5 +32,11 @@
   },
   "mongodb": "mongodb+srv://apiidlive:Laskar123@cluster0.cmcbv.mongodb.net/apiidlive?retryWrites=true&w=majority",
   "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app",
-  "apiidlive_reject": "https://apiidlive-kezb6.ondigitalocean.app/reject"
+  "apiidlive_reject": "https://apiidlive-kezb6.ondigitalocean.app/reject",
+  "smtp": {
+    "host": "smtp.mailtrap.io",
+    "port": "2525",
+    "user": "d09a9900455026",
+    "pass": "9df1456171d2b4"
+  }
 }

@@ -32,6 +32,8 @@ exports.Users = class Users extends Service {
       role,
       mistake,
       ip
+      ...data,
+      avatar
     };
 
     // Call the original `create` method with existing `params` and new data

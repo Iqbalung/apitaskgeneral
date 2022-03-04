@@ -7,6 +7,9 @@ const debt = require('./debt/debt.service.js');
 const incidents = require('./incidents/incidents.service.js');
 const logactivity = require('./logactivity/logactivity.service.js');
 const jobrecon = require('./jobrecon/jobrecon.service.js');
+const authmanagement = require('./authmanagement/authmanagement.service.js');
+const mailer = require('./mailer/mailer.service.js');
+const organization = require('./organization/organization.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -18,4 +21,7 @@ module.exports = function (app) {
   app.configure(incidents);
   app.configure(logactivity);
   app.configure(jobrecon);
+  app.configure(authmanagement);
+  app.configure(mailer);
+  app.configure(organization);
 };

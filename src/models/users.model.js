@@ -5,8 +5,9 @@
 module.exports = function (app) {
   const modelName = 'users';
   const mongooseClient = app.get('mongooseClient');
-  const schema = new mongooseClient.Schema({
+  const { Schema } = mongooseClient;
 
+  const schema = new Schema({
     email: { type: String, unique: true, lowercase: true,required:true},
     password: { type: String, required: true },
     name: { type: String,required:true },
@@ -15,9 +16,14 @@ module.exports = function (app) {
     role: { type: String },
     mistake: { type: String },
     login_status: { type: Boolean, default: false },
-    ip: [ { type: String } ]
-
-
+    ip: [ { type: String } ],
+    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' },
+    isVerified: { type: Boolean },
+    verifyToken: { type: String },
+    verifyExpires: { type: Date },
+    verifyChanges: { type: Object },
+    resetToken: { type: String },
+    resetExpires: { type: Date }
   }, {
     timestamps: true
   });
