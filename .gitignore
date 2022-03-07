@@ -112,3 +112,4 @@ data/
 yarn.lock
 
 .env
+*.sublime*
