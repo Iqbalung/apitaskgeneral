@@ -28,6 +28,6 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://apiidlive:apiidlive@194.233.94.78:27017/apiidlive?authSource=admin",
+  "mongodb": "mongodb://apiidlive:jamsembilan50@194.233.94.78:27017/apiidlive?authSource=admin",
   "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app"
 }
