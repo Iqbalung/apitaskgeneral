@@ -49,7 +49,7 @@ module.exports = {
     update: [],
     patch: [async context => {
       try {
-        const rejectUrl = context.app.get('apiidlive_reject')
+        const rejectUrl = process.env.APIIDLIVE_REJECT
         if(context.data.hasOwnProperty('taskStatus') && context.data.taskStatus=='reject'){
           console.log("whyw",context)
           await axios.put("http://194.233.64.209:3000/reject?id="+context.result.taskRefNumber, { id: context.data._id,taskStatus:context.data.taskStatus })
