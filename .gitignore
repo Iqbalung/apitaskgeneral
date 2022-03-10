@@ -110,3 +110,5 @@ $RECYCLE.BIN/
 lib/
 data/
 yarn.lock
+
+.env
