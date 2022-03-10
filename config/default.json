@@ -28,7 +28,7 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb://apiidlive:jamsembilan50@194.233.94.78:27017/apiidlive?authSource=admin",
+  "mongodb": "mongodb+srv://apiidlive:Laskar123@cluster0.cmcbv.mongodb.net/apiidlive?retryWrites=true&w=majority",
   "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app",
   "apiidlive_reject": "https://apiidlive-kezb6.ondigitalocean.app/reject"
 }
