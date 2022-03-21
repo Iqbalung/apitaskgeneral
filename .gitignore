@@ -111,4 +111,8 @@ lib/
 data/
 yarn.lock
 
+<<<<<<< HEAD
 *.sublime*
+=======
+.env
+>>>>>>> cc378d452e290a0d5219a8c520909c4076ff569e

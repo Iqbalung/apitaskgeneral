@@ -30,7 +30,7 @@
       "passwordField": "password"
     }
   },
-  "mongodb": "mongodb+srv://apiidlive:apiidlive@apilive.blyrr.mongodb.net/apiidlive?retryWrites=true&w=majority",
+  "mongodb": "mongodb+srv://apiidlive:Laskar123@cluster0.cmcbv.mongodb.net/apiidlive?retryWrites=true&w=majority",
   "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app",
   "apiidlive_reject": "https://apiidlive-kezb6.ondigitalocean.app/reject",
   "smtp": {
