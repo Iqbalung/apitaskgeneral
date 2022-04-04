@@ -4,7 +4,6 @@ const populateTask = require('../../hooks/populate-task');
 const sendevent = require('../../hooks/send-event')
 const search = require('feathers-mongodb-fuzzy-search');
 const momentTz = require('moment-timezone')
-const axios = require('axios')
 
 const changeTimezone = momentTz().format()
 
@@ -47,19 +46,7 @@ module.exports = {
     get: [],
     create: [/*sendevent()*/],
     update: [],
-    patch: [async context => {
-      try {
-        const rejectUrl = process.env.APIIDLIVE_REJECT
-        if(context.data.hasOwnProperty('taskStatus') && context.data.taskStatus=='reject'){
-          console.log("whyw",context)
-          await axios.put("http://194.233.64.209:3000/reject?id="+context.result.taskRefNumber, { id: context.data._id,taskStatus:context.data.taskStatus })
-          return context
-
-        }
-      } catch (err) {
-        console.log("why",err)
-      }
-    }],
+    patch: [],
     remove: []
   },
 
