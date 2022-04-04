@@ -53,7 +53,19 @@ exports.Tasks = class Tasks extends Service {
 
         params.createdAt = momentTz().add(7, 'hours').format()
       params.updatedAt = momentTz().add(7, 'hours').format()
-        console.log("why",params);
+        console.log("create",params);
         return super.create(params)
     }
+
+    async put(id,data,params) {
+    data.updatedAt = momentTz().add(7, 'hours').format()
+      console.log("put",data);
+      return super.put(id,data)
+  }
+
+  async patch(id,data,params) {
+  data.updatedAt = momentTz().add(7, 'hours').format()
+    // console.log("patch",params);
+    return super.patch(id,data)
+}
 };
