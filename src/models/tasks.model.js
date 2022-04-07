@@ -21,7 +21,8 @@ module.exports = function (app) {
     taskData: { type: Object },
     accountFrom: {type: Object },
     updatedAt: {type: Date},
-    taskCreatedBy:{ type:String , required:true }
+    taskCreatedBy:{ type:String , required:true },
+    isCopied: { type: Object }
   });
 
   schema.path('taskTittle').index({text:true});

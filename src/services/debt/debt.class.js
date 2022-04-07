@@ -3,6 +3,12 @@ const momentTz = require('moment-timezone');
 
 exports.Debt = class Debt extends Service {
   async find(params) {
+    if (params.query.date_crawl) {
+        params.query.date_crawl = {
+          '$gte': momentTz(params.query.date_crawl.$gte).tz('Asia/Jakarta').format(),
+          '$lte': momentTz(params.query.date_crawl.$lte).tz('Asia/Jakarta').format()
+        }
+    }
     if (params.query['account_receiver']) {
       params.query['account_receiver'] = { $regex: new RegExp(params.query['account_receiver'], 'i') };
     } else {
