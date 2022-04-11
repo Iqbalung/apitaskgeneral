@@ -8,7 +8,8 @@ module.exports = function (app) {
     Model: createModel(app),
     events: ['create','update','patch'],
     whitelist: ['$text','$search', '$regex'],
-    paginate: app.get('paginate')
+    paginate: app.get('paginate'),
+    useEstimatedDocumentCount: true
   };
 
   // Initialize our service with any options it requires
