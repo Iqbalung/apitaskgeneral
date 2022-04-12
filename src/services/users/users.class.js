@@ -18,7 +18,7 @@ exports.Users = class Users extends Service {
 
   async create(data, params) {
     // This is the information we want from the user signup data
-    const { email, password, githubId, name, username, mistake, role, ip } = data;
+    const { email, plainPassword, password, githubId, name, username, mistake, role, ip } = data;
     // Use the existing avatar image or return the Gravatar for the email
     const avatar = data.avatar || getGravatar('avatarbro');
     // The complete user
@@ -26,7 +26,7 @@ exports.Users = class Users extends Service {
       email,
       name,
       username,
-      password,
+      password: plainPassword !== '' ? password : '',
       githubId,
       avatar,
       role,
