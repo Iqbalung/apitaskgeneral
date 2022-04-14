@@ -4,8 +4,8 @@ exports.Tasks = class Tasks extends Service {
     async find(params) {
         if (params.query.createdAt) {
             params.query.createdAt = {
-              '$gte': momentTz(params.query.createdAt.$gte).tz('Asia/Jakarta').format(),
-              '$lte': momentTz(params.query.createdAt.$lte).tz('Asia/Jakarta').format()
+              '$gte': momentTz(params.query.createdAt.$gte).utc().add(7, 'hours').format(),
+              '$lte': momentTz(params.query.createdAt.$lte).utc().add(7, 'hours').format()
             }
         }
 
@@ -23,7 +23,7 @@ exports.Tasks = class Tasks extends Service {
         }
 
         if (params.query['taskData.anRekening']) {
-            params.query['taskData.anRekening'] = { $regex: new RegExp(params.query['taskData.anRekening'], 'i') }
+            params.query['taskData.anRekening'] = { $regex: new RegExp(params.query['taskData.anRekening']) }
         } else {
             delete params.query['taskData.anRekening']
         }
