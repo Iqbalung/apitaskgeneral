@@ -5,17 +5,17 @@ module.exports = function (app) {
   }
 
   app.on('connection', connection => {
-    console.log('anonymous connect')
+    // console.log('anonymous connect')
     // On a new real-time connection, add it to the anonymous channel
     app.channel('anonymous').join(connection);
   });
 
   app.on('login', (authResult, { connection }) => {
-    console.log('anonymous login')
+    // console.log('anonymous login')
     // connection can be undefined if there is no
     // real-time connection, e.g. when logging in via REST
     if (connection) {
-      console.log('user logged in')
+      // console.log('user logged in')
       // Obtain the logged in user from the connection
       // const user = connection.user;
 
@@ -40,10 +40,10 @@ module.exports = function (app) {
       const user = connection.user
 
       if (user.role === 'admin') {
-        console.log('user join admin channel')
+        // console.log('user join admin channel')
         app.channel('admin').join(connection)
       } else {
-        console.log(`user join worker/${user.username} channel`)
+        // console.log(`user join worker/${user.username} channel`)
         app.channel(`worker/${user.username}`).join(connection)
       }
     }
