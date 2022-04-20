@@ -5,14 +5,17 @@ module.exports = function (app) {
   }
 
   app.on('connection', connection => {
+    console.log('anonymous connect')
     // On a new real-time connection, add it to the anonymous channel
     app.channel('anonymous').join(connection);
   });
 
   app.on('login', (authResult, { connection }) => {
+    console.log('anonymous login')
     // connection can be undefined if there is no
     // real-time connection, e.g. when logging in via REST
     if (connection) {
+      console.log('user logged in')
       // Obtain the logged in user from the connection
       // const user = connection.user;
 
@@ -33,6 +36,16 @@ module.exports = function (app) {
       // Easily organize users by email and userid for things like messaging
       // app.channel(`emails/${user.email}`).join(connection);
       // app.channel(`userIds/${user.id}`).join(connection);
+
+      const user = connection.user
+
+      if (user.role === 'admin') {
+        console.log('user join admin channel')
+        app.channel('admin').join(connection)
+      } else {
+        console.log(`user join worker/${user.username} channel`)
+        app.channel(`worker/${user.username}`).join(connection)
+      }
     }
   });
 
@@ -45,6 +58,14 @@ module.exports = function (app) {
 
     // e.g. to publish all service events to all authenticated users use
     return app.channel('authenticated');
+  });
+
+  app.service('tasks').publish('patched', (data, context) => {
+    // return app.channel(`user/${data.roomId}`);
+    return data.taskStatus === 'assigned' ? [
+      app.channel('admin'),
+      app.channel(`worker/${data.taskAssigne}`)
+    ] : app.channel('authenticated')
   });
 
   // Here you can also add service specific event publishers
