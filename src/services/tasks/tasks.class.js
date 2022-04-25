@@ -23,7 +23,7 @@ exports.Tasks = class Tasks extends Service {
         }
 
         if (params.query['taskData.anRekening']) {
-            params.query['taskData.anRekening'] = { $regex: new RegExp(params.query['taskData.anRekening']) }
+            params.query['taskData.anRekening'] = { $regex: new RegExp(params.query['taskData.anRekening'], 'i') }
         } else {
             delete params.query['taskData.anRekening']
         }
