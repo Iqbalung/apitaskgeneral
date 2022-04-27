@@ -12,9 +12,9 @@ module.exports = {
       context.data.password = context.data.password.toString()
       
       return context
-    }, hashPassword('password')],
-    update: [hashPassword('password')],
-    patch: [hashPassword('password')],
+    }],
+    update: [],
+    patch: [],
     remove: []
   },
 
