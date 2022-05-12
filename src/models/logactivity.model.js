@@ -9,6 +9,7 @@ module.exports = function (app) {
 
   const schema = new Schema({
     process_name: { type: String},
+    account: { type: String },
     message: { type: String}
   }, {
     timestamps: true
