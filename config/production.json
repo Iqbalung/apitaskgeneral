@@ -30,10 +30,6 @@
       "passwordField": "password"
     }
   },
-<<<<<<< HEAD
-  "mongodb": "mongodb+srv://apiidlive:Laskar123@cluster0.cmcbv.mongodb.net/apiidlive?retryWrites=true&w=majority",
-  "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app"
-=======
   "mongodb": "mongodb+srv://apiidlive:apiidlive@apilive.blyrr.mongodb.net/apiidlive?retryWrites=true&w=majority",
   "apiidlive": "https://apiidlive-kezb6.ondigitalocean.app",
   "smtp": {
@@ -42,5 +38,4 @@
     "user": "d09a9900455026",
     "pass": "9df1456171d2b4"
   }
->>>>>>> 50137fe (add register verification email)
 }
