@@ -1,17 +1,15 @@
-// logactivity-model.js - A mongoose model
+// jobrecon-model.js - A mongoose model
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
 module.exports = function (app) {
-  const modelName = 'logactivities';
+  const modelName = 'jobrecon';
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
 
   const schema = new Schema({
-    process_name: { type: String},
-    account: { type: String },
-    message: { type: String},
-    organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
+    date: { type: Date, default: Date.now, required: true },
+    success: { type: Boolean, default: false }
   }, {
     timestamps: true
   });

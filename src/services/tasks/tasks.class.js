@@ -4,8 +4,8 @@ exports.Tasks = class Tasks extends Service {
     async find(params) {
         if (params.query.createdAt) {
             params.query.createdAt = {
-              '$gte': new Date(params.query.createdAt.$gte).toISOString(),
-              '$lte': new Date(params.query.createdAt.$lte).toISOString()
+              '$gte': momentTz(params.query.createdAt.$gte).utc().add(7, 'hours').format(),
+              '$lte': momentTz(params.query.createdAt.$lte).utc().add(7, 'hours').format()
             }
         }
 

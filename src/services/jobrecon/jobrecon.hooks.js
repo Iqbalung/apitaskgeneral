@@ -8,11 +8,7 @@ module.exports = {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [context => {
-      context.data.password = context.data.password.toString()
-      
-      return context
-    }],
+    create: [],
     update: [],
     patch: [],
     remove: []

@@ -17,57 +17,5 @@ module.exports = function (app) {
   // Get our initialized service so that we can register hooks
   const service = app.service('tasks');
 
-  service.on('created', (service, context) => console.log("tes"));
-  // A reference to a handler
-  const onCreatedListener = message => service;
-
-  // Listen `created` with a handler reference
-  service.on('created', onCreatedListener);
-  service.emit('created', onCreatedListener);
-  service.on('updated', onCreatedListener);
-  service.emit('updated', onCreatedListener);
-  service.on('patched', onCreatedListener);
-  service.emit('patched', onCreatedListener);
-
-  service.on('connection', function (socket) {
-
-        //Socket Routes
-        socket.on('created', function(service){
-            console.log(service);
-
-        io.emit('created', service);
-        socket.emit('created', service);
-        })
-        socket.on('updated', function(service){
-            console.log(service);
-
-        io.emit('updated', service);
-        socket.emit('updated', service);
-        })
-        socket.on('patched', function(service){
-            console.log(service);
-
-        io.emit('patched', service);
-        socket.emit('patched', service);
-        })
-
-        console.log('connected');
-    })
-
-    app.service('tasks').hooks({
-      after: {
-        create(context) {
-          service.emit('created', onCreatedListener);
-        },
-        update(context) {
-          service.emit('updated', onCreatedListener);
-        },
-        patch(context) {
-          service.emit('patched', onCreatedListener);
-        }
-      }
-    });
-
-
   service.hooks(hooks);
 };
