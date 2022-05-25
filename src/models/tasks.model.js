@@ -22,7 +22,7 @@ module.exports = function (app) {
     accountFrom: {type: Object },
     updatedAt: {type: Date},
     taskCreatedBy:{ type:String , required:true },
-    isCopied: { type: Object }
+    isCopied: { type: Object },
     organization_id: { type: Schema.Types.ObjectId, ref: 'organizations' }
   });
 

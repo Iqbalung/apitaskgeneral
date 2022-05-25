@@ -31,7 +31,7 @@ exports.Users = class Users extends Service {
       avatar,
       role,
       mistake,
-      ip
+      ip,
       ...data,
       avatar
     };
